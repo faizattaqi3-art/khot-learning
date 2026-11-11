@@ -1,8 +1,8 @@
 const CACHE_NAME = 'khot-learning-v1';
 const APP_SHELL = [
-  './', './index.html', './manifest.json', './assets/icon.svg', './assets/icon-192.png', './assets/icon-512.png',
-  './css/variables.css', './css/global.css', './css/app.css', './css/canvas.css', './css/responsive.css',
-  './js/app.js', './js/data.js', './js/store.js', './js/canvas-engine.js', './js/firebase-config.js', './js/firebase-service.js'
+  './', './index.html', './manifest.json', './icon.svg', './icon-192.png', './icon-512.png',
+  './variables.css', './global.css', './app.css', './canvas.css', './responsive.css',
+  './app.js', './data.js', './store.js', './canvas-engine.js', './firebase-config.js', './firebase-service.js'
 ];
 
 self.addEventListener('install', event => {

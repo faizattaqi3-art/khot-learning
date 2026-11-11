@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4a3427">
+  <meta name="description" content="KHOT Learning — platform belajar seni menulis kaligrafi Arab.">
+  <title>KHOT Learning — مَدْرَسَةُ الْخَطِّ</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="variables.css">
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="canvas.css">
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+  <div id="app" aria-live="polite">
+    <div class="boot-screen">
+      <div class="brand-mark">خ</div>
+      <p>مَدْرَسَةُ الْخَطِّ</p>
+      <span>Menyiapkan ruang belajar…</span>
+    </div>
+  </div>
+  <div id="toast-region" class="toast-region" aria-live="assertive" aria-atomic="true"></div>
+  <script type="module" src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+      window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js').catch(() => {}));
+    }
+  </script>
+</body>
+</html>

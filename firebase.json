@@ -19,6 +19,6 @@
       }
     ]
   },
-  "firestore": { "rules": "firebase/firestore.rules" },
-  "storage": { "rules": "firebase/storage.rules" }
+  "firestore": { "rules": "firestore.rules" },
+  "storage": { "rules": "storage.rules" }
 }

@@ -1,5 +1,7 @@
 # KHOT LEARNING — مَدْرَسَةُ الْخَطِّ
 
+> Paket ini khusus untuk unggah lewat formulir **Upload files** GitHub yang meratakan folder. Semua aset sudah ditempatkan pada satu folder utama. Unggah seluruh isi folder ini ke root repository; jangan membuat folder `css`, `js`, atau `assets`.
+
 **Tagline:** Learn, Practice, Create.
 
 KHOT Learning adalah prototipe platform pembelajaran seni menulis kaligrafi Arab. Proyek menggunakan HTML5, CSS3, Vanilla JavaScript ES Modules, HTML Canvas API, Pointer Events, dan adapter Firebase opsional.
