@@ -1,0 +1,26 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function signedIn() { return request.auth != null; }
+    function userDoc(uid) {
+      return firestore.get(/databases/(default)/documents/users/$(uid)).data;
+    }
+    function teacherCanRead(uid) {
+      return signedIn()
+        && userDoc(request.auth.uid).role == 'teacher'
+        && ('classId' in userDoc(uid))
+        && userDoc(uid).classId != null
+        && (
+          (('assignedClasses' in userDoc(request.auth.uid)) && userDoc(request.auth.uid).assignedClasses.hasAny([userDoc(uid).classId]))
+          || firestore.get(/databases/(default)/documents/classes/$(userDoc(uid).classId)).data.teacherId == request.auth.uid
+        );
+    }
+    match /artworks/{uid}/{fileName} {
+      allow read: if signedIn() && (request.auth.uid == uid || teacherCanRead(uid));
+      allow write: if signedIn()
+        && request.auth.uid == uid
+        && request.resource.size < 5 * 1024 * 1024
+        && request.resource.contentType.matches('image/(png|jpeg|webp)');
+    }
+  }
+}
